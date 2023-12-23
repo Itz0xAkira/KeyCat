@@ -1,0 +1,42 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const gifs = document.querySelectorAll(".floating-gif");
+
+    gifs.forEach((gif) => {
+        animateGif(gif);
+    });
+
+    function animateGif(gif) {
+        const maxX = window.innerWidth - gif.clientWidth;
+        const maxY = window.innerHeight - gif.clientHeight;
+
+        let posX = Math.random() * maxX;
+        let posY = Math.random() * maxY;
+
+        let speedX = (Math.random() - 0.5) * 4; // Random horizontal speed
+        let speedY = (Math.random() - 0.5) * 4; // Random vertical speed
+
+        function updatePosition() {
+            posX += speedX;
+            posY += speedY;
+
+            // Bounce on horizontal edges
+            if (posX < 0 || posX > maxX) {
+                speedX *= -1;
+            }
+
+            // Bounce on vertical edges
+            if (posY < 0 || posY > maxY) {
+                speedY *= -1;
+            }
+
+            // Ensure the GIF stays within the canvas
+            posX = Math.max(0, Math.min(posX, maxX));
+            posY = Math.max(0, Math.min(posY, maxY));
+
+            gif.style.transform = `translate(${posX}px, ${posY}px)`;
+            requestAnimationFrame(updatePosition);
+        }
+
+        updatePosition();
+    }
+});

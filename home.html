@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background: url('https://i.pinimg.com/originals/03/ec/51/03ec519418f56253f6e4dea00ce6621b.gif') no-repeat center center fixed; 
+                background-size: cover;
+            }
+    
+            .header-container {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                /* margin-left: 20%; */
+                /* padding-left: 100px; */
+            }
+    
+            .logo {
+                margin-right: 40px; /* Adjust the spacing between logos */
+                z-index: 2;
+            }
+    
+            .logo a {
+                display: block;
+                z-index: 2;
+            }
+    
+            .logoimg {
+                border-radius: 50%;
+                height: 50px; /* Adjust the height as needed */
+                width: 50px; /* Adjust the width as needed */
+                object-fit: cover; /* Ensure the image covers the entire container while maintaining aspect ratio */
+                background: url('https://i.gifer.com/YxDK.gif') repeat-x;
+                background-size: cover;
+                -webkit-mask-image: linear-gradient(transparent 0%, #000 0%);
+                mask-image: linear-gradient(transparent 0%, #000 0%);
+            }
+    
+            .flame-text {
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                font-family: 'Arial Black', Gadget, sans-serif;
+                font-size: 72px;
+                color: #ffcc00;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                background: url('https://i.gifer.com/YxDK.gif') repeat-x;
+                background-size: cover;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation: flameAnimation 1.5s infinite alternate;
+                z-index: 2;
+            }
+    
+            .floating-gif {
+                position: absolute;
+                max-width: 300px;
+                max-height: 300px;
+                pointer-events: none;
+            }
+    
+            .floating-text {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                font-size: 12px;
+                color: #ffffff;
+            }
+    
+            @keyframes flameAnimation {
+                from {
+                    background-position: 0% 0%;
+                }
+                to {
+                    background-position: 100% 0%;
+                }
+            }
+        </style>
+    </head>
+<body>
+    <audio autoplay loop muted>
+        <source src="usethiscat.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="header-container">
+        <!-- Logo 1 -->
+        <div class="logo">
+            <a href="https://birdeye.so/token/9pPE1q9EW1bMQWbHmffrzUCfRr7S82UoxNUFfA6mAZC6?chain=solana" target="_blank">
+                <img class="logoimg" src="./birdeye.png" alt="Logo 1">
+            </a>
+        </div>
+
+        <!-- Logo 2 -->
+        <div class="logo">
+            <a href="https://twitter.com/SolanaKeyCat" target="_blank">
+                <img class="logoimg" src="./twitter.png" alt="Twitter">
+            </a>
+        </div>
+
+        <!-- Logo 3 -->
+        <div class="logo">
+            <a href="https://t.me/SolanaKeyCat" target="_blank">
+                <img class="logoimg" src="./telegram.png" alt=" Telegram">
+            </a>
+        </div>
+    </div>
+
+    <div class="flame-text">$KEYCAT COMMUNITY TAKEOVER</div>
+    <div class="floating-text">pls dont judge me, i had to learn html in 2 hours to make this coz dev sleep ty &lt;3</div>
+    <div class="gif-container">
+        <!-- You can add multiple floating gifs by duplicating the following line -->
+        <img src="https://media2.giphy.com/media/thiGCB0V7WJdC/giphy.gif?cid=ecf05e47gn7ynh1xib8aw50hr0ssg1kpoy4o1eoklrvogygo&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Floating GIF" class="floating-gif" id="floatingGif1">
+        <img src="https://i.pinimg.com/originals/24/a3/70/24a3706ece5e9c86dcaf0e5fdab686a2.gif" alt="Floating GIF" class="floating-gif" id="floatingGif2">
+        <img src="https://i.pinimg.com/originals/30/60/74/3060746a7b57406ea6eda200868404d4.gif" alt="Floating GIF" class="floating-gif" id="floatingGif3">
+        <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/113/330/keyboardcatB3TA.gif" alt="Floating GIF" class="floating-gif" id="floatingGif4">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
